@@ -43,24 +43,24 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                 <span>Simple digital tools for growing local businesses</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
                 Grow your local business,{" "}
                 <span className="bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent">
                   digitally.
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-xl text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 LocalGrow helps small businesses discover digital opportunities,
                 get practical growth recommendations, and use simple tools to
                 improve their online presence.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 pt-2">
                 <button
                   id="hero-btn-get-started"
                   onClick={() => setActiveView("setup")}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-md shadow-indigo-200 transition-all hover:translate-y-[-1px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-md shadow-indigo-200 transition-all hover:translate-y-[-1px] min-h-[48px]"
                 >
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5" />
@@ -72,19 +72,19 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                     const el = document.getElementById("how-it-works-section");
                     if (el) el.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl shadow-xs transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl shadow-xs transition-colors min-h-[48px]"
                 >
                   See How It Works
                 </button>
               </div>
 
               {/* Instant Try Demo Business shortcut */}
-              <div className="pt-2 flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-500">
+              <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-slate-500">
                 <span>Want to see it in action?</span>
                 <button
                   id="hero-btn-demo-quick"
                   onClick={onTryDemo}
-                  className="font-semibold text-indigo-600 hover:text-indigo-800 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-600 transition-all"
+                  className="font-semibold text-indigo-600 hover:text-indigo-800 underline underline-offset-4 decoration-indigo-300 hover:decoration-indigo-600 transition-all py-1 min-h-[36px]"
                 >
                   Explore Sunrise Café Demo →
                 </button>
@@ -92,31 +92,31 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             </div>
 
             {/* Right Column: Visual Representation of LocalGrow Dashboard */}
-            <div className="lg:col-span-6 flex justify-center">
-              <div className="w-full max-w-md bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-indigo-100/50 p-5 sm:p-6 space-y-5 relative">
+            <div className="lg:col-span-6 flex justify-center w-full">
+              <div className="w-full max-w-md bg-white rounded-2xl border border-slate-200/90 shadow-xl shadow-indigo-100/50 p-4 sm:p-6 space-y-4 sm:space-y-5 relative">
                 {/* Header preview */}
-                <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xs">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-100 gap-2">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-700 flex items-center justify-center font-bold text-xs shrink-0">
                       <Coffee className="w-4 h-4" />
                     </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 leading-tight">
+                    <div className="min-w-0">
+                      <h4 className="text-sm font-bold text-slate-900 leading-tight truncate">
                         Sunrise Café
                       </h4>
-                      <p className="text-[11px] text-slate-500 flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-slate-400" /> Gurugram • Café / Restaurant
+                      <p className="text-[11px] text-slate-500 flex items-center gap-1 truncate">
+                        <MapPin className="w-3 h-3 text-slate-400 shrink-0" /> Gurugram • Café
                       </p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
+                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 shrink-0">
                     <TrendingUp className="w-3 h-3" />
-                    +18% this month
+                    +18%
                   </span>
                 </div>
 
                 {/* Score & Circular gauge preview */}
-                <div className="p-4 rounded-xl bg-gradient-to-br from-indigo-50/70 to-slate-50 border border-indigo-100/60 flex items-center justify-between gap-4">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-gradient-to-br from-indigo-50/70 to-slate-50 border border-indigo-100/60 flex items-center justify-between gap-3 sm:gap-4">
                   <div>
                     <span className="text-[11px] uppercase tracking-wider font-semibold text-indigo-600">
                       Digital Growth Score
@@ -374,23 +374,23 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       {/* CALL TO ACTION */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-b from-indigo-900 to-slate-900 text-white rounded-3xl p-8 sm:p-14 shadow-xl shadow-slate-200 relative overflow-hidden">
+          <div className="bg-gradient-to-b from-indigo-900 to-slate-900 text-white rounded-3xl p-6 sm:p-14 shadow-xl shadow-slate-200 relative overflow-hidden">
             {/* Subtle glow */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 max-w-xl mx-auto space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
                 Ready to grow your business?
               </h2>
-              <p className="text-indigo-200 text-base sm:text-lg">
+              <p className="text-indigo-200 text-sm sm:text-lg">
                 Tell us a little about your business and get your personalised
                 growth plan.
               </p>
-              <div className="pt-4">
+              <div className="pt-2 sm:pt-4">
                 <button
                   id="cta-btn-create-plan"
                   onClick={() => setActiveView("setup")}
-                  className="inline-flex items-center gap-2 px-7 py-4 text-base font-semibold text-slate-900 bg-white hover:bg-slate-100 active:bg-slate-200 rounded-xl shadow-lg transition-transform hover:scale-102"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-semibold text-slate-900 bg-white hover:bg-slate-100 active:bg-slate-200 rounded-xl shadow-lg transition-transform hover:scale-102 min-h-[48px]"
                 >
                   <span>Create My Growth Plan</span>
                   <ArrowRight className="w-5 h-5 text-indigo-600" />

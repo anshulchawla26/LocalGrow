@@ -1,4 +1,14 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+interface VercelRequest {
+  method?: string;
+  body?: any;
+}
+
+interface VercelResponse {
+  status: (statusCode: number) => VercelResponse;
+  json: (body: any) => void;
+  setHeader: (name: string, value: string) => VercelResponse;
+}
+
 import { GoogleGenAI, Type } from "@google/genai";
 
 const getGeminiClient = () => {

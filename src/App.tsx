@@ -107,7 +107,7 @@ export default function App() {
           />
 
           {/* Main workspace for dashboard, tools, and profile */}
-          <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto pb-24 md:pb-12">
+          <main className="flex-1 p-3.5 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto pb-28 md:pb-12 overflow-x-hidden">
             {activeView === "dashboard" && scoreResult && (
               <Dashboard
                 businessInfo={businessInfo}

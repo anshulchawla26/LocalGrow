@@ -155,9 +155,9 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
           <button
             id="tab-tool-ideas"
             onClick={() => setActiveTab("ideas")}
-            className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 text-xs sm:text-sm font-semibold rounded-lg transition-all ${
+            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 text-xs sm:text-sm font-semibold rounded-lg transition-all min-h-[44px] ${
               activeTab === "ideas"
-                ? "bg-white text-slate-900 shadow-xs"
+                ? "bg-white text-slate-900 shadow-xs font-bold"
                 : "text-slate-600 hover:text-slate-900"
             }`}
           >
@@ -167,9 +167,9 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
           <button
             id="tab-tool-reviews"
             onClick={() => setActiveTab("reviews")}
-            className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 text-xs sm:text-sm font-semibold rounded-lg transition-all ${
+            className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 text-xs sm:text-sm font-semibold rounded-lg transition-all min-h-[44px] ${
               activeTab === "reviews"
-                ? "bg-white text-slate-900 shadow-xs"
+                ? "bg-white text-slate-900 shadow-xs font-bold"
                 : "text-slate-600 hover:text-slate-900"
             }`}
           >
@@ -182,7 +182,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
       {/* TOOL 1 — GROWTH IDEAS */}
       {activeTab === "ideas" && (
         <div className="space-y-6">
-          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-7">
+          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-5 sm:p-7">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-5 border-b border-slate-100">
               <div>
                 <div className="flex items-center gap-2">
@@ -210,7 +210,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                   Business type
                 </label>
-                <div className="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-semibold text-slate-800 flex items-center justify-between">
+                <div className="px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-base sm:text-sm font-semibold text-slate-800 flex items-center justify-between min-h-[44px]">
                   <span>{businessInfo.category}</span>
                   <span className="text-xs text-slate-600 font-normal">
                     {businessInfo.name}
@@ -230,7 +230,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                   id="select-growth-goal"
                   value={selectedGoal}
                   onChange={(e) => setSelectedGoal(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 font-medium"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 font-medium min-h-[44px]"
                 >
                   {GOALS.map((goal) => (
                     <option key={goal} value={goal}>
@@ -242,7 +242,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
             </div>
 
             {/* Action button */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
               <span className="text-xs text-slate-500">
                 Tailored for small local businesses • Zero jargon
               </span>
@@ -250,7 +250,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                 id="btn-generate-growth-ideas"
                 onClick={handleGenerateIdeas}
                 disabled={loadingIdeas}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-xs transition-colors disabled:opacity-60"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-xs transition-colors disabled:opacity-60 min-h-[48px]"
               >
                 {loadingIdeas ? (
                   <>
@@ -270,7 +270,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
           {/* Ideas Results */}
           {ideas.length > 0 && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between px-1">
+              <div className="flex flex-wrap items-center justify-between gap-2 px-1">
                 <h3 className="text-base font-bold text-slate-900">
                   Recommended Ideas for {businessInfo.name}
                 </h3>
@@ -287,9 +287,9 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                       key={index}
                       className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-6 shadow-xs hover:border-indigo-200 transition-colors"
                     >
-                      <div className="flex items-start justify-between gap-3">
+                      <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3">
                         <div className="flex items-center gap-2.5">
-                          <span className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-700 text-xs font-mono font-bold flex items-center justify-center border border-indigo-100">
+                          <span className="w-6 h-6 rounded-md bg-indigo-50 text-indigo-700 text-xs font-mono font-bold flex items-center justify-center border border-indigo-100 shrink-0">
                             0{index + 1}
                           </span>
                           <h4 className="text-base font-bold text-slate-900">
@@ -305,10 +305,10 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                               index
                             )
                           }
-                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 ${
+                          className={`inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors shrink-0 min-h-[36px] w-full xs:w-auto ${
                             isCopied
                               ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                              : "bg-slate-100 hover:bg-slate-200 text-slate-700"
+                              : "bg-slate-100 hover:bg-slate-200 text-slate-700 active:bg-slate-300"
                           }`}
                         >
                           {isCopied ? (
@@ -319,13 +319,13 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                           ) : (
                             <>
                               <Copy className="w-3.5 h-3.5" />
-                              <span>Copy</span>
+                              <span>Copy Idea</span>
                             </>
                           )}
                         </button>
                       </div>
 
-                      <p className="text-sm text-slate-700 mt-2 leading-relaxed">
+                      <p className="text-sm text-slate-700 mt-2.5 leading-relaxed">
                         {idea.explanation}
                       </p>
 
@@ -420,7 +420,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                   type="text"
                   value={reviewBizName}
                   onChange={(e) => setReviewBizName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 min-h-[44px]"
                 />
               </div>
 
@@ -437,7 +437,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                   type="text"
                   value={reviewBizCategory}
                   onChange={(e) => setReviewBizCategory(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 min-h-[44px]"
                 />
               </div>
 
@@ -453,7 +453,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                   id="select-situation"
                   value={selectedSituation}
                   onChange={(e) => setSelectedSituation(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 font-medium"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 font-medium min-h-[44px]"
                 >
                   {SITUATIONS.map((sit) => (
                     <option key={sit} value={sit}>
@@ -465,7 +465,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
             </div>
 
             {/* Action button */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
               <span className="text-xs text-slate-500">
                 Polite, friendly, and non-pushy language
               </span>
@@ -473,7 +473,7 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                 id="btn-create-review-request"
                 onClick={handleGenerateReview}
                 disabled={loadingReview}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-xs transition-colors disabled:opacity-60"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-xs transition-colors disabled:opacity-60 min-h-[48px]"
               >
                 {loadingReview ? (
                   <>
@@ -515,33 +515,46 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                   </div>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5">
                   <span className="text-xs text-slate-500">
                     Perfect for WhatsApp chat follow-ups
                   </span>
-                  <button
-                    id="btn-copy-wa-message"
-                    onClick={() =>
-                      copyToClipboard(reviewResult.whatsappMessage, "whatsapp")
-                    }
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-                      copiedReviewType === "whatsapp"
-                        ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                        : "bg-slate-100 hover:bg-slate-200 text-slate-700"
-                    }`}
-                  >
-                    {copiedReviewType === "whatsapp" ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>Copied!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Copy Message</span>
-                      </>
-                    )}
-                  </button>
+                  <div className="flex items-center gap-2 w-full xs:w-auto">
+                    <a
+                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                        reviewResult.whatsappMessage
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 xs:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 shadow-xs transition-colors min-h-[38px]"
+                    >
+                      <Share2 className="w-3.5 h-3.5" />
+                      <span>Open WhatsApp</span>
+                    </a>
+                    <button
+                      id="btn-copy-wa-message"
+                      onClick={() =>
+                        copyToClipboard(reviewResult.whatsappMessage, "whatsapp")
+                      }
+                      className={`flex-1 xs:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors min-h-[38px] ${
+                        copiedReviewType === "whatsapp"
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                          : "bg-slate-100 hover:bg-slate-200 text-slate-700 active:bg-slate-300"
+                      }`}
+                    >
+                      {copiedReviewType === "whatsapp" ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <span>Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5" />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -567,33 +580,42 @@ export const GrowthTools: React.FC<GrowthToolsProps> = ({ businessInfo }) => {
                   </div>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2.5">
                   <span className="text-xs text-slate-500">
-                    Concise for SMS or printed receipts
+                    Concise for SMS or receipts
                   </span>
-                  <button
-                    id="btn-copy-short-message"
-                    onClick={() =>
-                      copyToClipboard(reviewResult.shortMessage, "short")
-                    }
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
-                      copiedReviewType === "short"
-                        ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                        : "bg-slate-100 hover:bg-slate-200 text-slate-700"
-                    }`}
-                  >
-                    {copiedReviewType === "short" ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>Copied!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Copy Message</span>
-                      </>
-                    )}
-                  </button>
+                  <div className="flex items-center gap-2 w-full xs:w-auto">
+                    <a
+                      href={`sms:?body=${encodeURIComponent(reviewResult.shortMessage)}`}
+                      className="flex-1 xs:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 shadow-xs transition-colors min-h-[38px]"
+                    >
+                      <Share2 className="w-3.5 h-3.5" />
+                      <span>Send SMS</span>
+                    </a>
+                    <button
+                      id="btn-copy-short-message"
+                      onClick={() =>
+                        copyToClipboard(reviewResult.shortMessage, "short")
+                      }
+                      className={`flex-1 xs:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors min-h-[38px] ${
+                        copiedReviewType === "short"
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                          : "bg-slate-100 hover:bg-slate-200 text-slate-700 active:bg-slate-300"
+                      }`}
+                    >
+                      {copiedReviewType === "short" ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <span>Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5" />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

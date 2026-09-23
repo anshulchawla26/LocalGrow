@@ -69,12 +69,12 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full sm:w-auto">
           {!isEditing ? (
             <button
               id="btn-edit-business-profile"
               onClick={() => setIsEditing(true)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl shadow-xs transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 rounded-xl shadow-xs transition-colors min-h-[44px]"
             >
               <Edit3 className="w-4 h-4 text-indigo-600" />
               <span>Edit Business Information</span>
@@ -86,7 +86,7 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
                 setFormData({ ...businessInfo });
                 setIsEditing(false);
               }}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-800 rounded-xl hover:bg-slate-100 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-800 rounded-xl hover:bg-slate-100 transition-colors min-h-[44px]"
             >
               Cancel
             </button>
@@ -265,7 +265,7 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 min-h-[44px]"
                 required
               />
             </div>
@@ -283,7 +283,7 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
                 onChange={(e) =>
                   setFormData({ ...formData, category: e.target.value })
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 min-h-[44px]"
               >
                 {CATEGORIES.map((cat) => (
                   <option key={cat} value={cat}>
@@ -307,7 +307,7 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
                 onChange={(e) =>
                   setFormData({ ...formData, location: e.target.value })
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 min-h-[44px]"
                 required
               />
             </div>
@@ -326,7 +326,7 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
                 onChange={(e) =>
                   setFormData({ ...formData, offerings: e.target.value })
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 min-h-[44px]"
                 required
               />
             </div>
@@ -344,7 +344,7 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
                 onChange={(e) =>
                   setFormData({ ...formData, challenge: e.target.value })
                 }
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-slate-900 bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 min-h-[44px]"
               >
                 {CHALLENGES.map((ch) => (
                   <option key={ch} value={ch}>
@@ -360,35 +360,35 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
                 Digital Presence
               </span>
 
-              <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+              <label className="flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 min-h-[48px]">
                 <input
                   type="checkbox"
                   checked={formData.hasInstagram}
                   onChange={(e) =>
                     setFormData({ ...formData, hasInstagram: e.target.checked })
                   }
-                  className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 rounded text-indigo-600 focus:ring-indigo-500"
                 />
                 <span className="text-sm font-medium text-slate-800">
                   Instagram Profile (Yes / No)
                 </span>
               </label>
 
-              <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+              <label className="flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 min-h-[48px]">
                 <input
                   type="checkbox"
                   checked={formData.hasWebsite}
                   onChange={(e) =>
                     setFormData({ ...formData, hasWebsite: e.target.checked })
                   }
-                  className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 rounded text-indigo-600 focus:ring-indigo-500"
                 />
                 <span className="text-sm font-medium text-slate-800">
                   Website (Yes / No)
                 </span>
               </label>
 
-              <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50">
+              <label className="flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 min-h-[48px]">
                 <input
                   type="checkbox"
                   checked={formData.hasGoogleProfile}
@@ -398,7 +398,7 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
                       hasGoogleProfile: e.target.checked,
                     })
                   }
-                  className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
+                  className="w-5 h-5 rounded text-indigo-600 focus:ring-indigo-500"
                 />
                 <span className="text-sm font-medium text-slate-800">
                   Google Business Profile (Yes / No)
@@ -407,18 +407,18 @@ export const BusinessProfile: React.FC<BusinessProfileProps> = ({
             </div>
           </div>
 
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3">
             <button
               type="button"
               onClick={() => setIsEditing(false)}
-              className="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-slate-800 rounded-xl hover:bg-slate-100"
+              className="w-full sm:w-auto px-5 py-3 text-sm font-semibold text-slate-600 hover:text-slate-800 rounded-xl hover:bg-slate-100 min-h-[48px] inline-flex items-center justify-center order-2 sm:order-1"
             >
               Cancel
             </button>
             <button
               type="submit"
               id="btn-save-profile-changes"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-xs transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-xs transition-colors min-h-[48px] order-1 sm:order-2"
             >
               <Check className="w-4 h-4" />
               <span>Save & Update Growth Score</span>
